@@ -1,0 +1,128 @@
+
+body {
+    font-family: 'Marcellus SC', serif;
+    margin: 0; /* Remove default margin from body */
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #ffffff;
+    padding: 0; /* Remove padding from the navigation bar */
+    margin: 0; /* Remove margin */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Vertically center items */
+}
+
+nav ul li {
+    flex-grow: 1; /* Allow list items to grow and fill space */
+    display: flex;
+    justify-content: center; /* Center the content within each list item */
+    position: relative; /* Set position to relative for dropdown positioning */
+}
+
+nav ul li a {
+    display: block;
+    width: 100%; /* Make the anchor element span the full width */
+}
+
+/* Styling for images */
+nav ul li img {
+    width: 100%; /* Set the image width to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Dropdown menu styling */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positions the dropdown below the parent item */
+    left: 0;
+    list-style: none;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%; /* Make the dropdown menu span the width of the parent */
+    z-index: 1; /* Ensure the dropdown is above other elements */
+}
+
+nav ul li ul li {
+    padding: 10px;
+    text-align: center; /* Center the text in the dropdown menu */
+}
+
+nav ul li ul li a {
+    display: block;
+    width: 100%; /* Span the full width */
+    padding: 5px 0; /* Add padding */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Black text color */
+    font-size: 27px;
+}
+
+nav ul li:hover ul {
+    display: block; /* Show dropdown menu on hover */
+}
+
+/* Styling for the center cell */
+.center-cell {
+    text-align: center;
+    background-color: #1e00ff; /* Background color for the center cell */
+    color: #ffffff; /* White font color */
+    padding: 15px; /* Padding inside the cell */
+}
+
+/* Text styling */
+.center-cell h1 {
+    font-size: 40px; /* Adjust as needed */
+    margin: 0; /* No margin around the heading */
+}
+
+/* Styling for the bracelet grid */
+.bracelet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+}
+
+/* Styling for each grid item */
+.grid-item {
+    text-align: center; /* Center the text and images */
+    border: 1px solid #ccc; /* Adds a border to each grid item */
+    padding: 10px; /* Adds padding around each grid item */
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.grid-item img {
+    width: 50%; /* Reduces the size of the image */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make sure the image is a block element */
+    margin: 0 auto; /* Center the image */
+}
+
+.grid-item p {
+    font-size: 18px; /* Font size for the descriptions */
+    margin: 10px 0; /* Margin around the description */
+}
+
+/* Styling for the price */
+.price {
+    font-weight: bold;
+    margin: 5px 0; /* Margin around the price */
+}
+
+/* Styling for the product name */
+.product-name {
+    background-color: #0facd3; /* Background color for the product name box */
+    padding: 10px; /* Padding for the product name box */
+    margin: 10px 0; /* Margin for the product name box */
+    font-weight: bold; /* Bold font for the product name */
+    font-size: 20px;
+    color: #ffffff;
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- New font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Set the default font for the entire website -->
+    <style>
+        body {
+            font-family: 'Bitter', serif; /* Change to the new font family */
+            margin: 0; /* Remove default margin from body */
+            max-width: 1920px; /* Set the max width to 1920 pixels */
+            margin: 0 auto; /* Center the body */
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background-color: #ffffff;
+            padding: 0; /* Remove padding from the navigation bar */
+            margin: 0; /* Remove margin */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between; /* Space items evenly */
+            align-items: center; /* Vertically center items */
+        }
+
+        nav ul li {
+            flex-grow: 1; /* Allow list items to grow and fill space */
+            display: flex;
+            justify-content: center; /* Center the content within each list item */
+            position: relative; /* Set position to relative for dropdown positioning */
+        }
+
+        nav ul li a {
+            display: block;
+            width: 100%; /* Make the anchor element span the full width */
+        }
+
+        /* Styling for images */
+        nav ul li img {
+            width: 100%; /* Set the image width to 100% of its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Styling for the line highlight */
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0; /* Start with no width */
+            height: 2px;
+            background-color: #1e00ff; /* Color of the line */
+            transition: width 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        /* On hover, expand the line highlight */
+        nav ul li a:hover::after {
+            width: 100%; /* Expand the line to full width */
+        }
+
+        /* Dropdown menu styling */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%; /* Positions the dropdown below the parent item */
+            left: 0;
+            list-style: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            width: 100%; /* Make the dropdown menu span the width of the parent */
+            z-index: 1; /* Ensure the dropdown is above other elements */
+        }
+
+        nav ul li ul li {
+            padding: 10px;
+            text-align: center; /* Center the text in the dropdown menu */
+        }
+
+        nav ul li ul li a {
+            display: block;
+            width: 100%; /* Span the full width */
+            padding: 5px 0; /* Add padding */
+            text-decoration: none; /* Remove underline */
+            color: black; /* Black text color */
+            font-size: 27px;
+        }
+
+        nav ul li:hover ul {
+            display: block; /* Show dropdown menu on hover */
+        }
+
+        /* Styling for the center cell */
+        .center-cell {
+            text-align: center;
+            background-color: #1e00ff; /* Background color for the center cell */
+            color: #ffffff; /* White font color */
+            padding: 15px; /* Padding inside the cell */
+        }
+
+        /* Text styling */
+        .center-cell h1 {
+            font-size: 40px; /* Adjust as needed */
+            margin: 0; /* No margin around the heading */
+        }
+
+        /* Styling for the brief description */
+        .brief-description {
+            max-width: 2000px;
+            margin: 0 auto 20px; /* Center and add margin below */
+            text-align: center; /* Center the text */
+            font-size: 20px;
+            color: #000000; /* Black text color */
+            padding: 70px; /* Add some padding for better readability */
+        }
+
+        /* Styling for the bracelet grid */
+        .bracelet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+            gap: 20px; /* Space between grid items */
+            padding: 20px; /* Padding around the grid */
+        }
+
+        /* Styling for each grid item */
+        .grid-item {
+            text-align: center; /* Center the text and images */
+            border: 1px solid #ccc; /* Adds a border to each grid item */
+            padding: 10px; /* Adds padding around each grid item */
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+
+        /* Add hover effect to scale up the grid item */
+        .grid-item:hover {
+            transform: scale(1.05); /* Scale the item up by 5% when hovered over */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
+        }
+
+        .grid-item img {
+            width: 50%; /* Reduces the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Make sure the image is a block element */
+            margin: 0 auto; /* Center the image */
+        }
+
+        .grid-item p {
+            font-size: 18px; /* Font size for the descriptions */
+            margin: 10px 0; /* Margin around the description */
+        }
+
+        /* Styling for the price */
+        .price {
+            font-weight: bold;
+            margin: 5px 0; /* Margin around the price */
+        }
+
+        /* Styling for the product name */
+        .product-name {
+            background-color: #0facd3; /* Background color for the product name box */
+            padding: 10px; /* Padding for the product name box */
+            margin: 10px 0; /* Margin for the product name box */
+            font-weight: bold; /* Bold font for the product name */
+            font-size: 20px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="bracelets.html"><img src="light_bracelets.jpg" alt="Bracelets"></a></li>
+            <li><a href="earrings.html"><img src="light_earrings.jpg" alt="Earrings"></a></li>
+            <li>
+                <a href="index.html"><img src="square_logoblue.gif" alt="Brand Logo"></a>
+                <!-- Dropdown menu -->
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </li>
+            <li><a href="necklaces.html"><img src="light_necklaces.jpg" alt="Necklaces"></a></li>
+            <li><a href="custom.html"><img src="light_custom.jpg" alt="Custom Design"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Blue header -->
+    <div class="center-cell">
+        <h1>Bracelets</h1>
+    </div>
+
+    <!-- Brief description -->
+    <div class="brief-description">
+        <p>Looking for the right touch to your outfit? Our charming bracelets are the perfect accessory for a night on the town or traveling. We carry a wide variety of silver, gold, silver, copper and zirconium bracelets that add the right amount of charm and elegance to any attire or skin tone. We also carry bronze-beaded bangle bracelets, hand-carved and shined wooden bracelets and gilded lucite. Most of our in-house bracelets are 5/16" wide but can be adjusted to fit any wrist size.</p>
+    </div>
+
+    <!-- Bracelet grid -->
+    <div class="bracelet-grid">
+        <!-- Grid item 1 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Golden Elegance Bracelet</strong></div>
+            <img src="B-twotone.jpg" alt="Bracelet 1">
+            <p>This elegant gold bracelet features intricate designs and sparkling stones, perfect for any occasion.</p>
+            <p class="price">Price: $479.99</p> <!-- Price for Bracelet 1 -->
+        </div>
+
+        <!-- Grid item 2 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Silver Sophistication Bracelet</strong></div>
+            <img src="B-precious.jpg" alt="Bracelet 2">
+            <p>This stunning silver bracelet adds a touch of luxury and sophistication to any outfit.</p>
+            <p class="price">Price: $539.99</p> <!-- Price for Bracelet 2 -->
+        </div>
+
+        <!-- Grid item 3 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Modern Harmony Bracelet</strong></div>
+            <img src="B-link.jpg" alt="Bracelet 3">
+            <p>This modern bracelet showcases a beautiful combination of metals and stones for a unique style.</p>
+            <p class="price">Price: $589.99</p> <!-- Price for Bracelet 3 -->
+        </div>
+
+        <!-- Grid item 4 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Timeless Beauty Bracelet</strong></div>
+            <img src="B-blue.jpg" alt="Bracelet 4">
+            <p>This classic bracelet is adorned with precious stones, making it an excellent choice for a timeless look.</p>
+            <p class="price">Price: $649.99</p> <!-- Price for Bracelet 4 -->
+        </div>
+    </div>
+</body>
+</html>

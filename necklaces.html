@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- New font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Set the default font for the entire website -->
+    <style>
+        body {
+            font-family: 'Bitter', serif; /* Change to the new font family */
+            margin: 0; /* Remove default margin from body */
+            max-width: 1920px; /* Set the max width to 1920 pixels */
+            margin: 0 auto; /* Center the body */
+        }
+        /* Navigation bar styling */
+        nav {
+            background-color: #ffffff;
+            padding: 0; /* Remove padding from the navigation bar */
+            margin: 0; /* Remove margin */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between; /* Space items evenly */
+            align-items: center; /* Vertically center items */
+        }
+
+        nav ul li {
+            flex-grow: 1; /* Allow list items to grow and fill space */
+            display: flex;
+            justify-content: center; /* Center the content within each list item */
+            position: relative; /* Set position to relative for dropdown positioning */
+        }
+
+        nav ul li a {
+            display: block;
+            width: 100%; /* Make the anchor element span the full width */
+        }
+
+        /* Styling for images */
+        nav ul li img {
+            width: 100%; /* Set the image width to 100% of its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Styling for the line highlight */
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0; /* Start with no width */
+            height: 2px;
+            background-color: #1e00ff; /* Color of the line */
+            transition: width 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        /* On hover, expand the line highlight */
+        nav ul li a:hover::after {
+            width: 100%; /* Expand the line to full width */
+        }
+
+        /* Dropdown menu styling */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%; /* Positions the dropdown below the parent item */
+            left: 0;
+            list-style: none;
+            background-color: #ffffff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            width: 100%; /* Make the dropdown menu span the width of the parent */
+            z-index: 1; /* Ensure the dropdown is above other elements */
+        }
+
+        nav ul li ul li {
+            padding: 10px;
+            text-align: center; /* Center the text in the dropdown menu */
+        }
+
+        nav ul li ul li a {
+            display: block;
+            width: 100%; /* Span the full width */
+            padding: 5px 0; /* Add padding */
+            text-decoration: none; /* Remove underline */
+            color: black; /* Black text color */
+            font-size: 27px;
+        }
+
+        nav ul li:hover ul {
+            display: block; /* Show dropdown menu on hover */
+        }
+
+        /* Styling for the center cell */
+        .center-cell {
+            text-align: center;
+            background-color: #1e00ff; /* Background color for the center cell */
+            color: #ffffff; /* White font color */
+            padding: 15px; /* Padding inside the cell */
+        }
+
+        /* Text styling */
+        .center-cell h1 {
+            font-size: 40px; /* Adjust as needed */
+            margin: 0; /* No margin around the heading */
+        }
+
+        /* Bracelet grid */
+        .bracelet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Create a 2-column grid */
+            gap: 20px; /* Space between grid items */
+            padding: 20px; /* Padding around the grid */
+        }
+
+        /* Grid item styling */
+        .grid-item {
+            text-align: center; /* Center the text and images */
+            border: 1px solid #ccc; /* Adds a border to each grid item */
+            padding: 10px; /* Adds padding around each grid item */
+            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            transition: transform 0.3s ease-in-out; /* Transition effect for hover */
+        }
+
+        /* New hover effect */
+        .grid-item:hover {
+            transform: scale(1.05); /* Scale the item up by 5% when hovered */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
+        }
+
+        .grid-item img {
+            width: 50%; /* Reduces the size of the image */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Make sure the image is a block element */
+            margin: 0 auto; /* Center the image */
+        }
+
+        .grid-item p {
+            font-size: 18px; /* Font size for the descriptions */
+            margin: 10px 0; /* Margin around the description */
+        }
+
+        /* Styling for the price */
+        .price {
+            font-weight: bold;
+            margin: 5px 0; /* Margin around the price */
+        }
+
+        /* Styling for the product name */
+        .product-name {
+            background-color: #0facd3; /* Background color for the product name box */
+            padding: 10px; /* Padding for the product name box */
+            margin: 10px 0; /* Margin for the product name box */
+            font-weight: bold; /* Bold font for the product name */
+            font-size: 20px;
+            color: #ffffff;
+        }
+            .custom-description {
+            background-color: #f2f2f2; /* Background color for the custom description */
+            padding: 80px; /* Padding for the custom description */
+            margin-bottom: 20px; /* Add margin at the bottom */
+            }
+            .custom-description p {
+            font-size: 20px; /* Font size for the custom description */
+            margin: 0; /* Remove margin */
+            text-align: center; /* Center the text */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="bracelets.html"><img src="light_bracelets.jpg" alt="Bracelets"></a></li>
+            <li><a href="earrings.html"><img src="light_earrings.jpg" alt="Earrings"></a></li>
+            <li>
+                <a href="index.html"><img src="square_logoblue.gif" alt="Brand Logo"></a>
+                <!-- Dropdown menu -->
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </li>
+            <li><a href="necklaces.html"><img src="light_necklaces.jpg" alt="Necklaces"></a></li>
+            <li><a href="custom.html"><img src="light_custom.jpg" alt="Custom Design"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Centered cell below the navigation bar -->
+    <div class="center-cell">
+        <h1>Necklaces</h1>
+    </div>
+    <div class="custom-description">
+        <p>Romantic, classic, acquisitive and classy, our necklaces dress you up with style and love. Our in-house necklaces are decorated with beads and findings from around the world. You can custom design any necklace with our variety of semi-precious and precious stones. We carry necklaces with garnet strands and additional links to make them longer. You can custom-select any chain you like.
+</p>
+</div>
+
+    <!-- Bracelet grid -->
+    <div class="bracelet-grid">
+        <!-- Grid item 1 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Ethereal Dream Necklaces</strong></div>
+            <img src="N-turquoise.jpg" alt="Necklace 1">
+            <p> Crafted with stunning emeralds and diamonds, this luxurious necklace radiates elegance and sophistication. Its delicate design features a cascading pattern that draws the eye and adds a touch of grace to any ensemble. Perfect for special occasions, it embodies timeless beauty and refined charm.</p>
+            <p class="price">Price: $179.99</p> <!-- Price for Necklace 1 -->
+        </div>
+
+        <!-- Grid item 2 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Celestial Radiance Necklace</strong></div>
+            <img src="N-heart.jpg" alt="Necklace 2">
+            <p> A regal piece that combines lustrous gold with rich rubies, this necklace exudes opulence and grace. The intricate design features a floral motif with the rubies elegantly set to enhance their deep red hue. It's a statement piece that commands attention and elevates any look with its timeless charm.</p>
+            <p class="price">Price: $349.99</p> <!-- Price for Necklace 2 -->
+        </div>
+
+        <!-- Grid item 3 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Golden Majesty Necklace</strong></div>
+            <img src="N-bluechoker.jpg" alt="Necklace 3">
+            <p>This necklace showcases a breathtaking array of sapphires and white diamonds set in a starry motif. Its celestial-inspired design captures the brilliance of the night sky, making it a captivating piece for any jewelry collection. Ideal for those who appreciate the magic of the universe, it adds a touch of otherworldly allure to any outfit.</p>
+            <p class="price">Price: $399.99</p> <!-- Price for Necklace 3 -->
+        </div>
+
+        <!-- Grid item 4 -->
+        <div class="grid-item">
+            <div class="product-name"><strong>Silver Elegance Necklace</strong></div>
+            <img src="N-floral.jpg" alt="Necklace 4">
+            <p> Crafted with lustrous silver and dazzling diamonds, this necklace offers a contemporary take on classic luxury. The sleek, minimalist design highlights the beauty of each diamond, creating a radiant and sophisticated piece. Perfect for formal events, it adds a touch of understated elegance to any attire.</p>
+            <p class="price">Price: $449.99</p> <!-- Price for Necklace 4 -->
+        </div>
+    </div>
+</body>
+</html>
